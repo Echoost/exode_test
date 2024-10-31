@@ -1,0 +1,8 @@
+.emoji {
+    font-family: 'NotoColorEmojiLimited' !important;
+    font-size: 50px !important;
+}
+
+.MuiCardContent-root:last-child {
+    padding-bottom: 12px !important;
+}
