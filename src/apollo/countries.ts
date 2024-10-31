@@ -32,8 +32,33 @@ export interface CountriesData {
 }
 
 export const GET_COUNTRIES = gql`
-    query {
+    query GetCountries {
         countries {
+            code
+            name
+            native
+            phone
+            capital
+            currency
+            languages {
+                name
+                native
+                rtl
+            }
+            continent {
+                name
+            }
+            emoji
+            states {
+                name
+            }
+        }
+    }
+`;
+
+export const SEARCH_COUNTRIES = gql`
+    query SearchCountries($countryCode: String!) {
+        countries(filter: { code: { in: [$countryCode] } }) {
             code
             name
             native

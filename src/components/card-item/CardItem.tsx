@@ -1,11 +1,7 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import CardActionArea from '@mui/material/CardActionArea';
 import { Country } from '../../apollo/countries';
 import './CardItem.css';
-import { Box } from '@mui/material';
 import { CardItemHeader } from './CardItemHeader';
 import { CardItemFooter } from './CardItemFooter';
 interface CardItemProps {
@@ -13,7 +9,6 @@ interface CardItemProps {
 }
 
 export const CardItem = ({ data }: CardItemProps) => {
-    console.log(data);
     return (
         <Card
             sx={{
