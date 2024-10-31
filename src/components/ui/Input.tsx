@@ -2,19 +2,21 @@ import { useApolloClient, useQuery } from '@apollo/client';
 import TextField from '@mui/material/TextField';
 import { useEffect, useState } from 'react';
 import { GET_COUNTRIES, SEARCH_COUNTRIES } from '../../apollo/countries';
+import { useDebounce } from '../../hooks/useDebounce';
 
 export const Input = () => {
     const [value, setValue] = useState('');
+    const debouncedValue = useDebounce(value);
     const client = useApolloClient();
 
     const { data } = useQuery(SEARCH_COUNTRIES, {
-        variables: { countryCode: value },
-        skip: !value,
+        variables: { countryCode: debouncedValue },
+        skip: !debouncedValue,
     });
     const { refetch } = useQuery(GET_COUNTRIES);
 
     useEffect(() => {
-        if (!value) {
+        if (!debouncedValue) {
             refetch();
         }
 
@@ -26,7 +28,7 @@ export const Input = () => {
                 },
             });
         }
-    }, [data, value, client]);
+    }, [data, debouncedValue, client]);
 
     const handleSetValue = (
         event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
