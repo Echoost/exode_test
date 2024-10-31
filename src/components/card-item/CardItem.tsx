@@ -1,9 +1,9 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Country } from '../../apollo/countries';
+import { Country } from 'apollo/countries';
+import { CardItemHeader } from 'components/card-item/CardItemHeader';
+import { CardItemFooter } from 'components/card-item/CardItemFooter';
 import './CardItem.css';
-import { CardItemHeader } from './CardItemHeader';
-import { CardItemFooter } from './CardItemFooter';
 interface CardItemProps {
     data: Country;
 }

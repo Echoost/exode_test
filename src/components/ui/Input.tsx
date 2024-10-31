@@ -1,8 +1,8 @@
 import { useApolloClient, useQuery } from '@apollo/client';
 import TextField from '@mui/material/TextField';
 import { useEffect, useState } from 'react';
-import { GET_COUNTRIES, SEARCH_COUNTRIES } from '../../apollo/countries';
-import { useDebounce } from '../../hooks/useDebounce';
+import { GET_COUNTRIES, SEARCH_COUNTRIES } from 'apollo/countries';
+import { useDebounce } from 'hooks/useDebounce';
 
 export const Input = () => {
     const [value, setValue] = useState('');
@@ -43,8 +43,8 @@ export const Input = () => {
             label={'Search by country code'}
             id="outlined-multiline-flexible"
             variant="filled"
-            multiline
             size="small"
+            sx={{ marginTop: '20px' }}
         />
     );
 };

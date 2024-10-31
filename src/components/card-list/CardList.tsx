@@ -1,9 +1,9 @@
-import { useQuery } from '@apollo/client';
 import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { CountriesData, Country, GET_COUNTRIES } from '../../apollo/countries';
-import { CardItem } from '../card-item/CardItem';
 import CircularProgress from '@mui/material/CircularProgress';
+import { useQuery } from '@apollo/client';
+import { CountriesData, Country, GET_COUNTRIES } from 'apollo/countries';
+import { gsap } from 'gsap';
+import { CardItem } from 'components/card-item/CardItem';
 
 export const CardList = () => {
     const { data, loading, error } = useQuery<CountriesData>(GET_COUNTRIES);
@@ -23,7 +23,7 @@ export const CardList = () => {
                 }
             });
         }
-    }, [data]); 
+    }, [data]);
 
     if (error) {
         return <p>Error</p>;

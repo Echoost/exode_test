@@ -1,11 +1,10 @@
 import { Box, Typography } from '@mui/material';
-import { Country } from '../../apollo/countries';
+import { Country } from 'apollo/countries';
 interface CardItemFooterProps {
     data: Country;
 }
 
 export const CardItemFooter = ({ data }: CardItemFooterProps) => {
-    console.log(data.languages.length);
     return (
         <Box display="flex" justifyContent="space-between" mt={2}>
             <Typography style={{ wordBreak: 'break-all' }} width={'80px'}>

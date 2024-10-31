@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { Country } from '../../apollo/countries';
+import { Country } from 'apollo/countries';
 
 interface CardItemHeaderProps {
     data: Country;
