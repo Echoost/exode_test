@@ -5,4 +5,4 @@
 
 Стек: React, TS, Apollo GraphQl, Material UI, GASP
 
-Сайт для просмотра: [https://test-vk.netlify.app/](https://test-exode.netlify.app/)
+Сайт для просмотра: [https://test-exode.netlify.app/](https://test-exode.netlify.app/)
